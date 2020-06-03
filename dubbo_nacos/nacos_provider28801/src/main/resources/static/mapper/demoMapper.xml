@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhaoxianglong.dubbo.dao.DemoDao">
+    <insert id="insertDemo" parameterType="com.zhaoxianglong.dubbo.entity.DemoEntity">
+        insert into dubbo_demo.demo(id, user, age, address) VALUES (#{id} , #{user} , #{age} , #{address})
+    </insert>
+
+    <update id="updateDemo" parameterType="com.zhaoxianglong.dubbo.entity.DemoEntity">
+        update dubbo_demo.demo set user = #{user} , age = #{age} , address = #{address} where id = #{id}
+    </update>
+
+    <delete id="deleteDemo">
+        delete from dubbo_demo.demo where id = #{id}
+    </delete>
+
+    <select id="findList" resultType="com.zhaoxianglong.dubbo.entity.DemoEntity">
+        select * from dubbo_demo.demo
+    </select>
+
+    <select id="findById" resultType="com.zhaoxianglong.dubbo.entity.DemoEntity">
+        select * from dubbo_demo.demo where id = #{id}
+    </select>
+</mapper>

@@ -1,0 +1,30 @@
+server:
+  port: 8001
+
+
+spring:
+  application:
+    name: nacos_provider28800
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dubbo_demo
+    username: root
+    password: Zwy19931219
+    type: com.alibaba.druid.pool.DruidDataSource
+
+dubbo:
+  application:
+    name: ${spring.application.name}
+  registry:
+    address: nacos://localhost:8848
+  scan:
+    base-packages: com.zhaoxianglong.dubbo.serviceImpl
+  protocol:
+    name: dubbo
+    port: 28800
+mybatis:
+  mapper-locations: /static/mapper/*.xml
+logging:
+  level:
+    root: info
+    sql: debug

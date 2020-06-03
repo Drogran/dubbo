@@ -1,0 +1,14 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: nacos_consumer
+
+dubbo:
+  registry:
+    address: nacos://localhost:8848
+  application:
+    name: ${spring.application.name}
+  consumer:
+    loadbalance: random
