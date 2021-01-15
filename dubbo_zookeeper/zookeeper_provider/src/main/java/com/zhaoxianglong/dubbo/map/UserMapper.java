@@ -42,7 +42,7 @@ public interface UserMapper {
      * @param id 主键
      * @return yes or no
      */
-    @Delete("delete user where id = #{id")
+    @Delete("delete user where id = #{id}")
     Integer delUserById(@Param("id") Integer id);
 
     /**

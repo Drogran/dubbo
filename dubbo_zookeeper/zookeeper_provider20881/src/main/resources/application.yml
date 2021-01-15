@@ -17,3 +17,7 @@ dubbo:
     name: dubbo
     port: 20881
 
+logging:
+  level:
+    com.zhaoxianglong.dubbo.map: debug
+
